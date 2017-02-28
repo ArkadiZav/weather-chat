@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <title> Weather Chat </title>
+  </head>
+  <body>
+    <div class="page-header">
+      <h1>Weather Chat</h1>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" id="city-name" class="form-control" placeholder="Enter City"/>
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button" onclick="clickHandler()">Get Temp</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class = "view-city-weather">
+        </div>
+      </div>
+    </div>
+
+    <script id="weatherchat-template" type="text/x-handlebars-template">
+      <div class = "city">
+        <h3> {{ name }} </h3>
+        <h4> <strong> {{ celsius }} &#8451 / {{ farenheit }} &#8457 </strong>
+        <span> <h5> at {{ hours }}:{{ minutes }} on {{ date }}</h5> </span> </h4>
+        <div class="pull-right" style="margin:5px"><a href="#" class="remove-city"><span id="bin"><i
+                class="fa fa-trash-o fa-1x" aria-hidden="true"></i></span></a></div>
+        <div class='comments-container'>
+          <div class=comments-list></div>
+            <div class='input-group'>
+              <input type='text' class='form-control comment-name' placeholder= 'Comment about the weather'/>
+              <span class='input-group-btn'> <button class='btn btn-success add-comment' type='button'>Comment</button>
+              </span>
+            </div>
+          </div>
+      </div>
+    </script>
+    <script src="script.js"> </script>
+  </body>
+</html>
